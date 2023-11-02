@@ -10,6 +10,8 @@ import { HeroSectionProps } from "./interface";
 
 import { FaArrowRight } from "react-icons/fa6";
 
+
+
 const HeroSection = ({
   root,
   h1Ref,
@@ -17,6 +19,7 @@ const HeroSection = ({
   btnRef,
   circleLeftRef,
   circleRightRef,
+  setIsOpen
 }: HeroSectionProps) => {
   return (
     <section
@@ -31,6 +34,7 @@ const HeroSection = ({
       </div>
 
       <div className="h-full   relative flex justify-start items-center w-full max-w-[1440px] m-auto">
+
         <div className="z-0 w-[100%] lg:w-[100%]  min-h-[600px] relative flex flex-col items-center text-center justify-center sm:p-0">
           <h1 className="mb-5 md:mb-5 relative font-bold" ref={h1Ref}>
             <div className="text-4xl md:text-6xl mb-3 text-white">
@@ -52,9 +56,9 @@ const HeroSection = ({
             </Paragraph>
           </div>
 
-          <div className="max-w-7xl " ref={btnRef}>
+          <div className="max-w-7xl " ref={btnRef} onClick={() => setIsOpen(true)}>
             <PrimaryButton pathName="/contact-us" className=" text-xl ">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-5">
                 Contact us
                 <span className="animate-horicentralBounce">
                   <FaArrowRight />
