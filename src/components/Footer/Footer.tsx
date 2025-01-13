@@ -8,7 +8,6 @@ import Link from "next/link";
 import { gsap } from "gsap";
 
 
-
 const Footer = (props: FooterProps) => {
   const { footerMenu } = props;
 
@@ -48,6 +47,7 @@ const Footer = (props: FooterProps) => {
   return (
     <footer className="bg-neutral-1000 text-white">
       <div
+      ref={root}
         className={`relative md:py-[50px]  mx-auto p-5 lg:px-[50px] flex flex-col-reverse lg:flex-row gap-y-10 lg:gap-y-0`}
       >
         {/* left */}
@@ -57,11 +57,10 @@ const Footer = (props: FooterProps) => {
             {footerMenu.footerLeft.companyAddress}
           </div>
           <div className="font-light">
-            Email: {footerMenu.footerLeft.companyEmail}
+            Email: <a href="mailto: hello@codework-tech.com"><span className="hover:border-b-2 hover:border-white">{footerMenu.footerLeft.companyEmail}</span></a> 
           </div>
           <div className="mb-5 font-light">
-            {" "}
-            Tel: {footerMenu.footerLeft.companyTel}
+            Tel: <a href="tel:0638494282"><span className="hover:border-b-2 hover:border-white">{footerMenu.footerLeft.companyTel}</span></a>
           </div>
           <div className="text-xs  font-light">
             {footerMenu.footerLeft.companyCopyright}
